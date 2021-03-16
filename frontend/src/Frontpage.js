@@ -1,15 +1,20 @@
 import React, { component, useEffect, useState, useRef} from 'react'
 
 
-export default function Frontpage () {
+export default function Frontpage (props) {
 
-    const [currentView, setView] = useState("All");
-    
+    const handleClick = () => {
+        props.setView("User")
+    }
+
     return (
-        <section className = "navbar">
+        <section className = "frontpage">
             <h1>My Anime List</h1>
-            <button>Log in</button>
+            <button onClick={handleClick}>Enter the vault</button>
+
+            <section>
+                <a href ="https://github.com/bilaalukis/Solo-API-poject-AnimeWatchList" >Check out my repo!</a>
+            </section>
         </section>
     )
-
 }

@@ -2,6 +2,15 @@ const express = require('express');
 const port = process.env.PORT || 8000;
 const app = express();
 const knex = require('./db/knex');
+const cors = require("cors");
+
+
+const corsOptions = {
+    origin: "http://localhost:3000",
+    optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 
 app.use(express.json())
 
